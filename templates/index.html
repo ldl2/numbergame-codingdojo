@@ -5,15 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Great Number Game</title>
+  <link rel="stylesheet" type="text/css" href="../static/game.css">
 </head>
 <body>
-  <div>
+
     <h2>Welcome to the Great Number Game!</h2>
     <h3> I am thinking of a number between 1 and 100 </h3>
     <h3> Take a guess !</h3>
+
+    {% if word == 'Too High!' %}
+    <div class="lose">
+      <p>
+      {{word}}
+      </p>
+    </div>
+    {% elif word == 'Too Low!' %}
+    <div class="lose">
+      <p>
+      {{word}}
+      </p>
+    </div>
+    {% elif word == "win" %}
+    <div class="win">
+      <p>
+      {{key1}}
+      </p>
+      <form method="post" action="/reset">
+        <button type="submit">reset</button>
+    </div>
+    {% endif %}
+
+
+    {% if word != "win" %}
     <form action="/numbers" method="post">
       <input type="text" name="number">
       <br>
       <button type="submit">Submit</button>
+    </form>
+    {%endif%}
+
 </body>
 </html>

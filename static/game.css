@@ -1,0 +1,21 @@
+*{
+  margin: 0px;
+ 	padding: 0px;
+}
+div{
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+    color: white;
+
+}
+div p{
+    font-size: 20pt;
+    text-align: center;
+}
+.lose{
+  background: red;
+}
+.win{
+  background: green;
+}
